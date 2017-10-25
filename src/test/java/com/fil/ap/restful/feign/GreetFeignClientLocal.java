@@ -74,4 +74,10 @@ public class GreetFeignClientLocal implements GreetingFeign {
 		
 		return result;
 	}
+
+	@Override
+	public Greeting sayHello(Greeting greeting) {
+
+		return null;
+	}
 }
