@@ -20,6 +20,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.apache.commons.io.IOUtils;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fil.ap.restful.pojo.Greeting;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -48,9 +57,37 @@ public class GreetingControllerTests {
     @Test
     public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 
-        this.mockMvc.perform(get("/greeting").param("name", "Spring Community"))
-                .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Hello, Spring Community!"));
+        MvcResult result = this.mockMvc.perform(get("/greeting").param("name", "Spring Community")).andReturn();
+    
+        int status = result.getResponse().getStatus();
+        byte[] bytes = result.getResponse().getContentAsByteArray();
+
+		String json = new String(bytes, "UTF-8");
+
+		System.out.println(json);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		
+		TypeReference<Greeting> typeRef = new TypeReference<Greeting>(){};
+		Greeting bean = mapper.readValue(json, typeRef);
+		
+        Assert.assertEquals(
+        		"HTTP Response Status is not 200", 
+        		200, 
+        		status
+        );
+        
+        Assert.assertEquals("Content is incorrect", 
+        		"Hello, Spring Community!", 
+        		bean.getContent()
+        );
+        
+        Assert.assertEquals("ID is incorrect", 
+        		1, 
+        		bean.getId()
+        );
     }
 
 }
