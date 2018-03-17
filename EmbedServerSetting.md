@@ -1,6 +1,5 @@
 
 * server配置
-	* > server.port=9090
 	* > server.address #指定server绑定的地址
 	* > server.compression.enabled #是否开启压缩，默认为false.
 	* > server.compression.excluded-user-agents #指定不压缩的user-agent，多个以逗号分隔，默认值为:text/html,text/xml,text/plain,text/css
