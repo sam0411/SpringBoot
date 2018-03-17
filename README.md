@@ -10,3 +10,4 @@
 * [Spring Schedule](https://github.com/sam0411/SpringBoot/blob/master/SpringSchedule.md)
 * [Spring Validator](https://github.com/sam0411/SpringBoot/blob/master/SpringValidator.md)
 * [Spring CORS](https://github.com/sam0411/SpringBoot/blob/master/SpringCORS.md)
+* [ZXING QR Code](https://github.com/sam0411/SpringBoot/blob/master/Zxing_QR.md)
