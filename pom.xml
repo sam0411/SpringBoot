@@ -15,7 +15,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.3.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -30,65 +30,67 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>commons-io</groupId>
-		    <artifactId>commons-io</artifactId>
-		    <version>2.5</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>19.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-<!--  
-		<dependency>  
-		    <groupId>org.springframework.boot</groupId>  
-		    <artifactId>spring-boot-starter-security</artifactId>  
-		</dependency> 
-		
-		<dependency>  
-		    <groupId>de.codecentric</groupId>  
-		    <artifactId>spring-boot-admin-starter-client</artifactId>  
-		    <version>1.5.2</version>
-		</dependency> 
--->
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
+			</dependency> <dependency> <groupId>de.codecentric</groupId> <artifactId>spring-boot-admin-starter-client</artifactId> 
+			<version>1.5.2</version> </dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency> 
-		
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
- 
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 
-        
-	<!-- Feige restful client  -->
+
+		<!-- Feige restful client -->
 		<dependency>
 			<groupId>com.netflix.feign</groupId>
 			<artifactId>feign-core</artifactId>
@@ -99,31 +101,19 @@
 			<artifactId>feign-jackson</artifactId>
 			<version>8.18.0</version>
 		</dependency>
-<!--  
-		<dependency>
-                <groupId>org.springframework.session</groupId>
-                <artifactId>spring-session-data-redis</artifactId>
-                <version>1.3.1.RELEASE</version>
-                <type>pom</type>
-        </dependency>
-        <dependency>
-                <groupId>biz.paluch.redis</groupId>
-                <artifactId>lettuce</artifactId>
-                <version>3.5.0.Final</version>
-        </dependency>
- -->       		
-		<!-- 
-			The spring-configuration-metadata.json file. 
-			This file is created at build-time by the spring-boot-configuration-processor 
-			which is a Java Annotation Processor. 
-			We have to add this processor to our project and make sure it is executed during project builds. 
-			
-			Now that the annotation processor has been activated, 
-			any future changes to your GreetingProperties class will trigger an automatic update of the json metadata. 
-			You can try it out by adding some extra properties, or renaming your greeting property to something else. 
-			Warnings will appear / disappear as appropriate. 
-			If you are curious where your metadata file is, you can find it in target/classes/META-INF.
-		-->
+		<!-- <dependency> <groupId>org.springframework.session</groupId> <artifactId>spring-session-data-redis</artifactId> 
+			<version>1.3.1.RELEASE</version> <type>pom</type> </dependency> <dependency> 
+			<groupId>biz.paluch.redis</groupId> <artifactId>lettuce</artifactId> <version>3.5.0.Final</version> 
+			</dependency> -->
+		<!-- The spring-configuration-metadata.json file. This file is created 
+			at build-time by the spring-boot-configuration-processor which is a Java 
+			Annotation Processor. We have to add this processor to our project and make 
+			sure it is executed during project builds. Now that the annotation processor 
+			has been activated, any future changes to your GreetingProperties class will 
+			trigger an automatic update of the json metadata. You can try it out by adding 
+			some extra properties, or renaming your greeting property to something else. 
+			Warnings will appear / disappear as appropriate. If you are curious where 
+			your metadata file is, you can find it in target/classes/META-INF. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
@@ -147,7 +137,7 @@
 			<artifactId>javase</artifactId>
 			<version>3.2.0</version>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>
