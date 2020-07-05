@@ -4,12 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.fil.ap</groupId>
-	<artifactId>SpringBoot</artifactId>
+	<artifactId>spring-boot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-
-	<name>SpringBoot</name>
-	<description>SpringBoot Learning</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
