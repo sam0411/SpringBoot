@@ -13,7 +13,7 @@ public class GuavaController {
 	private IGuavaService guavaService;
 	
 	@RequestMapping("/guavaget")
-	public String getGuava(String name, long id) {
+	public String getGuava(String name, Long id) {
 
 		Greeting greeting = new Greeting(id, name);
 		String response = guavaService.sayHello(greeting);
