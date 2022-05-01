@@ -16,18 +16,13 @@
 package com.fil.ap.restful;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -36,7 +31,6 @@ import org.springframework.test.web.servlet.MvcResult;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fil.ap.cache.guava.GuavaService;
 import com.fil.ap.restful.pojo.Greeting;
 
 
@@ -48,20 +42,6 @@ public class GreetingControllerTests {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @MockBean
-    GuavaService guavaServiceMock;
-    
-    @Test
-    public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
-    	
-    	Greeting greeting = new Greeting(new Long(111), "Alex");
-    	
-    	BDDMockito.given(this.guavaServiceMock.sayHello(greeting)).willReturn("Hello Alex");
-    	
-        this.mockMvc.perform(get("/greeting")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Hello, World!"));
-    }
 
     @Test
     public void paramGreetingShouldReturnTailoredMessage() throws Exception {
