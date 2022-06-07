@@ -13,7 +13,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fil.ap.restful.config.GreetingProperties;
-import com.fil.ap.restful.feign.GreetFeignClientLocal;
 import com.fil.ap.restful.pojo.Greeting;
 
 @Profile({ "sit" })
@@ -62,7 +61,7 @@ public class GreetingControllerLocal {
 			
 			if("Spring Community".equals(name)) {
 				
-				InputStream is = GreetFeignClientLocal.class.getResourceAsStream("/mock/greeting_spring_community.json");
+				InputStream is = GreetingControllerLocal.class.getResourceAsStream("/mock/greeting_spring_community.json");
 				
 				byte[] bytes = IOUtils.toByteArray(is);
 				
