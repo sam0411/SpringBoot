@@ -1,4 +1,4 @@
-package com.fil.ap.config;
+package com.fil.ap.springboot.config;
 
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;

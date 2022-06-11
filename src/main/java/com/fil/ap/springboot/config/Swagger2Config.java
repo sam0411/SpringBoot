@@ -1,4 +1,4 @@
-package com.fil.ap.config;
+package com.fil.ap.springboot.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

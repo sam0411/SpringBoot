@@ -1,4 +1,4 @@
-package com.fil.ap.base.qr;
+package com.fil.ap.springboot.base.qr;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;

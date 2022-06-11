@@ -1,4 +1,4 @@
-package com.fil.ap.base.id;
+package com.fil.ap.springboot.base.id;
 
 import java.util.UUID;
 
